@@ -82,7 +82,7 @@ set_web_account = "请设置iCopy WEB DASHBOARD 账号秘密\n格式 : 账号,�
 set_web_success = "设置成功"
 
 [eng]
-start = "Hi! replace . Welcome to use iCopy" #replace==symbolic placeholder
+start = "2Hi! replace . Welcome to use iCopy" #replace==symbolic placeholder
 guide_to_menu = "Please Input '/menu' to Choose run mode"
 menu_msg = "Pls Choose the Mode"
 quick_mode = "QUICK MODE"
