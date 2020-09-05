@@ -15,6 +15,10 @@ def restricted_msg(_lang,_first_name,_user_id):
         return(f"HI ! {_first_name} こんにちは"
             f"ユーザーID:{_user_id}は許可されていない"
             "正しい方法で追加してください")
+    if "tw" == _lang:
+        return(f"HI ! {_first_name} 您好\n"
+            f"您的用戶ID:{_user_id} 未經授權\n"
+            "請用正確的方式添加")
 
 # ##### /set Messages #####
 
@@ -25,6 +29,8 @@ def set_help(_lang):
         return("Only rules in '/set' and '/set rule' is vaild")
     if "jp" == _lang:
         return("'/set'または'/set rule'のルールに準拠する必要がある")
+    if "cn" == _lang:
+        return("命令必須符合'/set' 或 '/set rule'規則")
 
 def set_multi_fav_rule():
     return ("\n "
@@ -61,6 +67,15 @@ def set_multi_fav_guide(_lang):
             "説明:"
             "順番は関係ない: '*\+*' *_增加する_*, '*\-*' *_キャンセル_* \n "
             "「クイックモード」は1つしか存在できません")
+    if "tw" == _lang:
+        return ("*請輸入需要修改的目標地址* \n "
+            "\n"
+            "例 : 如下 *\+/\-* \n "
+            "_quick \| fav_ 為對應前綴 \n "
+            + set_multi_fav_rule() +
+            "說明:"
+            "隨意組合排序: '*\+*' *_增加_*, '*\-*' *_取消_* \n "
+            "_quick_ 只可存在_一個_，為快速目錄")
 
 def set_single_fav_rule():
     return ("\n "
@@ -84,6 +99,11 @@ def set_single_fav_guide(_lang):
             "\n"
             "例 : 接頭辞 *\+/\-* ID\n "
             + set_single_fav_rule())
+    if "cn" == _lang:
+        return ("*請輸入需要修改的目標地址* \n "
+            "\n"
+            "例 : 如下 *\+/\-* \n "
+            + set_single_fav_rule())
 
 def get_fav_len_invaild(_lang, each):
     if "cn" == _lang:
@@ -92,3 +112,5 @@ def get_fav_len_invaild(_lang, each):
         return(f"ID:{each[6:]} is not vaild")
     if "jp" == _lang:
         return(f"入力したID:{each[6:]}は無効です")
+    if "tw" == _lang:
+        return(f"您提交的 ID:{each[6:]} 不是有效的")
